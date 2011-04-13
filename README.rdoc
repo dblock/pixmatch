@@ -55,7 +55,7 @@ Pixmatch REST API client library for TinEye[http://www.tineye.com/] reverse-imag
       <<: *settings
       username: '<your username>'
       password: '<your password>'
-      endpoint: 'http://<your url>.tineye.com'
+      endpoint: '<your url>.tineye.com'
 * Run 'bundle install'
 * Test with 'rspec spec'
 * Send pull requests.
