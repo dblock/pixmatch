@@ -2,22 +2,19 @@ require 'uri'
 require 'rest_client'
 
 module Pixmatch
-	module Request
-		# Perform a method
-		def method(name)
-		  request(:get, "rest", { method: name })
-		end
-		
+	module Request		
 		private
 		
-		def request(method, path, params = {})
-		  response = RestClient::Request.new({ 
-		    method: method, 
-		    url: "#{endpoint}/#{paramify(path, params)}", 
+		def request(http_method, path, query_params = {}, data_params = {})
+		  capture RestClient::Request.new({ 
+		    method: http_method,
+		    url: "#{endpoint}/#{paramify(path, query_params)}", 
 		    user: username,
 		    password: password
-		   }).execute
-		   			
+		   }.merge(data_params)).execute   			
+		end
+		
+		def capture(response)
 			json = Utils.parse_json(response)
 		  Utils.handle_error(json)
 			json

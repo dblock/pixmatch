@@ -7,10 +7,12 @@ module Pixmatch
       @status = json['status']
       @method = json['method']
       @error = json['error']
+      @result = json['result']
     end
     
     def to_s
-      @error.nil? ? 'undefined' : @error.join('\r\n')
+      s = @error.nil? ? 'Unexpected Error' : @error.join('\r\n')
+      s += ("\r\n " + @result.join('\r\n ')) if @result
     end
   end
 end

@@ -4,7 +4,7 @@ test:
   <<: *settings
   username: 'username'
   password: 'password'
-  endpoint: 'http://api.tineye.com'
+  endpoint: 'api.tineye.com'
 
 staging:
   <<: *settings

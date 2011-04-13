@@ -20,5 +20,20 @@ describe "Pixmatch" do
       response['status'].should == "ok"
       response['method'].should == "ping"
     end
+    it "add with one path" do
+      response = Pixmatch.add([ File.join(File.dirname(__FILE__), 'assets/mona-lisa.jpg') ])
+      response['status'].should == "ok"
+      response['method'].should == "add"
+    end
+    it "add with one File object" do
+      response = Pixmatch.add([ File.new(File.join(File.dirname(__FILE__), 'assets/mona-lisa.jpg')) ])
+      response['status'].should == "ok"
+      response['method'].should == "add"
+    end
+    it "add with an array of File objects" do      
+      response = Pixmatch.add(Dir.glob(File.join(File.dirname(__FILE__), 'assets/*.jpg')))
+      response['status'].should == "ok"
+      response['method'].should == "add"
+    end
   end
 end

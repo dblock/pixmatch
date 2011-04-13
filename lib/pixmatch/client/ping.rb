@@ -1,8 +1,9 @@
 module Pixmatch
   class Client
     module Ping
+      # Check whether the PixMatch server is running.
       def ping
-        method('ping')
+        request(:get, 'rest', { method: :ping })
       end
     end    
   end
