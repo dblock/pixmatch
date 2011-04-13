@@ -20,6 +20,11 @@ describe "Pixmatch" do
       response['status'].should == "ok"
       response['method'].should == "ping"
     end
+    it "count" do
+      count = Pixmatch.count()
+      count.is_a?(Integer).should be_true
+      count.should >= 0
+    end
     it "add with one path" do
       response = Pixmatch.add([ File.join(File.dirname(__FILE__), 'assets/mona-lisa.jpg') ])
       response['status'].should == "ok"

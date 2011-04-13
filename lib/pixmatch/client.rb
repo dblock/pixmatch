@@ -6,6 +6,7 @@ module Pixmatch
 		Dir[File.expand_path('../client/*.rb', __FILE__)].each { |f| require f }
 		
 		include Pixmatch::Client::Ping
+		include Pixmatch::Client::Count
 		include Pixmatch::Client::Add
 	end
 end
