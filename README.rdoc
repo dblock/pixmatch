@@ -2,20 +2,50 @@
 
 Pixmatch REST API client library for TinEye[http://www.tineye.com/] reverse-image search.
 
+== Using
+
+    gem install pixmatch
+
 == Example
 
   require 'rubygems'
   require 'pixmatch'
   
   Pixmatch.configure do |config|
-    config.username     = '...'
-    config.password     = '...'
-    config.url          = '...'
+    config.username     = 'username'
+    config.password     = 'password'
+    config.url          = 'api.tineye.com'
   end
 
   # ping the server
   response = Pixmatch.ping()
   puts response['status']
+
+  # count the number of images in the collection
+  count = Pixmatch.count()
+  
+  # add an image
+  Pixmatch.add('images/mona-lisa.jpg')
+  Pixmatch.add(File.new('images/mona-lisa.jpg')
+  
+  # add a collection of images
+  Pixmatch.add(Dir.glob('images/*.jpg'))
+  
+  # list images
+  images = Pixmatch.list()
+  images.each { |filename| puts filename }
+
+  # delete an image
+  Pixmatch.delete('mona-lisa.jpg')
+
+  # delete an array of images
+  Pixmatch.delete([ 'mona-lisa.jpg', 'mona-lisa-botero.jpg' ])
+  
+  # search
+  found = Pixmatch.search('images/mona-lisa.jpg')
+  found.each { |find|
+    puts "#{find['filename']}: #{find['score']}"
+  }
 
 == Contributing
 
