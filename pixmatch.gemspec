@@ -4,76 +4,72 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{skittles}
-  s.version = "0.3.1"
+  s.name = %q{pixmatch}
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Anthony Smith"]
-  s.date = %q{2011-03-12}
-  s.description = %q{Foursquare v2 REST API client library for Ruby}
-  s.email = %q{anthony@sticksnleaves.com}
+  s.authors = ["Daniel Doubrovkine"]
+  s.date = %q{2011-04-13}
+  s.description = %q{Pixmatch REST API client library for Ruby}
+  s.email = %q{dblock@dblock.org}
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
   ]
   s.files = [
-    "lib/skittles.rb",
-    "lib/skittles/api.rb",
-    "lib/skittles/client.rb",
-    "lib/skittles/client/checkin.rb",
-    "lib/skittles/client/photo.rb",
-    "lib/skittles/client/setting.rb",
-    "lib/skittles/client/special.rb",
-    "lib/skittles/client/tip.rb",
-    "lib/skittles/client/user.rb",
-    "lib/skittles/client/venue.rb",
-    "lib/skittles/configuration.rb",
-    "lib/skittles/connection.rb",
-    "lib/skittles/error.rb",
-    "lib/skittles/request.rb",
-    "lib/skittles/utils.rb",
-    "lib/skittles/version.rb"
+    "lib/pixmatch.rb",
+    "lib/pixmatch/api.rb",
+    "lib/pixmatch/client.rb",
+    "lib/pixmatch/client/add.rb",
+    "lib/pixmatch/client/count.rb",
+    "lib/pixmatch/client/delete.rb",
+    "lib/pixmatch/client/list.rb",
+    "lib/pixmatch/client/ping.rb",
+    "lib/pixmatch/client/search.rb",
+    "lib/pixmatch/configuration.rb",
+    "lib/pixmatch/error.rb",
+    "lib/pixmatch/request.rb",
+    "lib/pixmatch/utils.rb",
+    "lib/pixmatch/version.rb"
   ]
-  s.homepage = %q{http://github.com/anthonator/skittles}
+  s.homepage = %q{http://github.com/dblock/pixmatch}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.2}
-  s.summary = %q{Foursquare v2 REST API client library for Ruby}
+  s.rubygems_version = %q{1.3.7}
+  s.summary = %q{Pixmatch REST API client library for Ruby}
   s.test_files = [
-    "spec/skittles_spec.rb",
+    "spec/pixmatch_spec.rb",
     "spec/spec_helper.rb"
   ]
 
   if s.respond_to? :specification_version then
+    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<oauth2>, ["~> 0.1.1"])
+      s.add_runtime_dependency(%q<rest-client>, ["~> 1.6.1"])
       s.add_runtime_dependency(%q<yajl-ruby>, ["~> 0.8.1"])
       s.add_runtime_dependency(%q<hashie>, ["~> 1.0.0"])
       s.add_development_dependency(%q<rspec>, ["~> 2.5.0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.10"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
       s.add_development_dependency(%q<yard>, ["~> 0.6.4"])
     else
-      s.add_dependency(%q<oauth2>, ["~> 0.1.1"])
+      s.add_dependency(%q<rest-client>, ["~> 1.6.1"])
       s.add_dependency(%q<yajl-ruby>, ["~> 0.8.1"])
       s.add_dependency(%q<hashie>, ["~> 1.0.0"])
       s.add_dependency(%q<rspec>, ["~> 2.5.0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.10"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
-      s.add_dependency(%q<rcov>, [">= 0"])
       s.add_dependency(%q<yard>, ["~> 0.6.4"])
     end
   else
-    s.add_dependency(%q<oauth2>, ["~> 0.1.1"])
+    s.add_dependency(%q<rest-client>, ["~> 1.6.1"])
     s.add_dependency(%q<yajl-ruby>, ["~> 0.8.1"])
     s.add_dependency(%q<hashie>, ["~> 1.0.0"])
     s.add_dependency(%q<rspec>, ["~> 2.5.0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.10"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
-    s.add_dependency(%q<rcov>, [">= 0"])
     s.add_dependency(%q<yard>, ["~> 0.6.4"])
   end
 end
