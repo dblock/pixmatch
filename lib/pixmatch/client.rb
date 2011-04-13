@@ -8,5 +8,7 @@ module Pixmatch
 		include Pixmatch::Client::Ping
 		include Pixmatch::Client::Count
 		include Pixmatch::Client::Add
+		include Pixmatch::Client::List
+		include Pixmatch::Client::Delete
 	end
 end
