@@ -10,5 +10,6 @@ module Pixmatch
 		include Pixmatch::Client::Add
 		include Pixmatch::Client::List
 		include Pixmatch::Client::Delete
+		include Pixmatch::Client::Search
 	end
 end

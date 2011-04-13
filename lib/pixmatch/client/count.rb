@@ -2,6 +2,7 @@ module Pixmatch
   class Client
     module Count
       # Get the number of items currently in the collection.
+      # @return Number of items currently in the collection.
       def count
         response = request(:get, 'rest', { method: :count })
         result = response['result']

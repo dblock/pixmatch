@@ -72,5 +72,16 @@ describe "Pixmatch" do
       response['method'].should == "delete"
       Pixmatch.count.should == count - filenames.size
     end
+    it "search" do      
+      Pixmatch.add(Dir.glob(File.join(File.dirname(__FILE__), 'assets/*.jpg')))
+      response = Pixmatch.search(File.join(File.dirname(__FILE__), 'assets/mona-lisa.jpg'))
+      response.is_a?(Array).should be_true
+      response.size.should >= 0
+      response.each { |result|
+        result.is_a?(Hash).should be_true
+        result.has_key?('score').should be_true
+        result.has_key?('filename').should be_true
+      }
+    end
   end
 end
