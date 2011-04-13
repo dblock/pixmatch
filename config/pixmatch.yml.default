@@ -1,0 +1,13 @@
+development: &settings
+  
+test:
+  <<: *settings
+  username: 'username'
+  password: 'password'
+  endpoint: 'http://api.tineye.com'
+
+staging:
+  <<: *settings
+
+production:
+  <<: *settings

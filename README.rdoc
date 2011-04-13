@@ -1,6 +1,6 @@
 = Pixmatch
 
-Pixmatch (Tineye) REST API client library for Ruby
+Pixmatch REST API client library for TinEye[http://www.tineye.com/] reverse-image search.
 
 == Example
 
@@ -12,6 +12,23 @@ Pixmatch (Tineye) REST API client library for Ruby
     config.password     = '...'
     config.url          = '...'
   end
+
+  # ping the server
+  response = Pixmatch.ping()
+  puts response['status']
+
+== Contributing
+
+* Fork the project
+* Copy 'config/pixmatch.yml.default' to 'config/pixmatch.yml'. Edit your pixmatch API credentials as follows.
+    test:
+      <<: *settings
+      username: '<your username>'
+      password: '<your password>'
+      endpoint: 'http://<your url>.tineye.com'
+* Run 'bundle install'
+* Test with 'rspec spec'
+* Send pull requests.
   
 == Copyright
 
