@@ -1,6 +1,6 @@
 = Pixmatch
 
-Pixmatch REST API client library for TinEye[http://www.tineye.com/] reverse-image search.
+Pixmatch REST API client library for Pixmatch[http://ideeinc.com/products/pixmatch/], automated image matching API by Idee[http://ideeinc.com]. Given an image to look for, it locates identical or modified images within or between large scale image collections.
 
 == Using
 
