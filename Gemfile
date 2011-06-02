@@ -3,7 +3,7 @@ source "http://rubygems.org"
 group :development do
   gem "rspec",     "~> 2.5.0"
   gem "bundler",   "~> 1.0.10"
-  gem "jeweler",   "~> 1.5.2"
+  gem "jeweler",   "~> 1.6.2"
   gem "yard",      "~> 0.6.4"
 end
 
