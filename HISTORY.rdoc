@@ -1,2 +1,5 @@
+0.2.0 - June 02, 2011
+* Replaced yajl-ruby with json gem, yajl was causing all kinds of trouble.
+
 0.1.0 - April 13, 2011
 * Init
