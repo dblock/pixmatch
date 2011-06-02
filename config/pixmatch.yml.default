@@ -1,13 +1,11 @@
-development: &settings
+development:
   
 test:
-  <<: *settings
   username: 'username'
   password: 'password'
   endpoint: 'api.tineye.com'
 
 staging:
-  <<: *settings
 
 production:
-  <<: *settings
+

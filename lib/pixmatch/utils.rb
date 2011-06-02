@@ -1,5 +1,5 @@
 require 'hashie'
-require 'yajl'
+require 'json'
 
 module Pixmatch
   # @private
@@ -11,7 +11,7 @@ module Pixmatch
       
       # Parses JSON and returns a Hashie::Mash
       def self.parse_json(json)
-        Hashie::Mash.new(Yajl::Parser.new.parse(json))
+        Hashie::Mash.new(JSON.parse(json))
       end
   end
 end

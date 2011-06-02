@@ -8,6 +8,6 @@ group :development do
 end
 
 gem "rest-client", "~> 1.6.1", :git => "https://github.com/archiloque/rest-client"
-gem "yajl-ruby",   "~> 0.8.1"
+gem "json",        "~> 1.5.1"
 gem "hashie",      "~> 1.0.0"
 
