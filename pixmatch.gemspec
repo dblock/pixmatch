@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Daniel Doubrovkine"]
-  s.date = %q{2011-04-13}
+  s.date = %q{2011-06-02}
   s.description = %q{Pixmatch REST API client library for Ruby}
   s.email = %q{dblock@dblock.org}
   s.extra_rdoc_files = [
@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/dblock/pixmatch}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{Pixmatch REST API client library for Ruby}
   s.test_files = [
     "spec/pixmatch_spec.rb",
@@ -43,12 +43,11 @@ Gem::Specification.new do |s|
   ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rest-client>, ["~> 1.6.1"])
-      s.add_runtime_dependency(%q<yajl-ruby>, ["~> 0.8.1"])
+      s.add_runtime_dependency(%q<json>, ["~> 1.5.1"])
       s.add_runtime_dependency(%q<hashie>, ["~> 1.0.0"])
       s.add_development_dependency(%q<rspec>, ["~> 2.5.0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.10"])
@@ -56,7 +55,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<yard>, ["~> 0.6.4"])
     else
       s.add_dependency(%q<rest-client>, ["~> 1.6.1"])
-      s.add_dependency(%q<yajl-ruby>, ["~> 0.8.1"])
+      s.add_dependency(%q<json>, ["~> 1.5.1"])
       s.add_dependency(%q<hashie>, ["~> 1.0.0"])
       s.add_dependency(%q<rspec>, ["~> 2.5.0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.10"])
@@ -65,7 +64,7 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<rest-client>, ["~> 1.6.1"])
-    s.add_dependency(%q<yajl-ruby>, ["~> 0.8.1"])
+    s.add_dependency(%q<json>, ["~> 1.5.1"])
     s.add_dependency(%q<hashie>, ["~> 1.0.0"])
     s.add_dependency(%q<rspec>, ["~> 2.5.0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.10"])
